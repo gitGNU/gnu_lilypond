@@ -37,6 +37,7 @@ namespace Guile_user {
   extern Variable module_use_x;
   extern Variable symbol_p;
   extern Variable the_root_module;
+  extern Variable default_port_encoding;
 }
 
 namespace Display {

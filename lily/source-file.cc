@@ -41,6 +41,7 @@ using namespace std;
 #include "international.hh"
 #include "misc.hh"
 #include "warn.hh"
+#include "lily-imports.hh"
 
 void
 Source_file::load_stdin ()
@@ -160,7 +161,7 @@ Source_file::init_port ()
   // particularly interested in sticking to its documentation.
   // <URL:http://debbugs.gnu.org/cgi/bugreport.cgi?bug=20200>
   scm_dynwind_begin ((scm_t_dynwind_flags)0);
-  scm_dynwind_fluid (ly_lily_module_constant ("%default-port-encoding"), SCM_BOOL_F);
+  scm_dynwind_fluid (Guile_user::default_port_encoding, SCM_BOOL_F);
   str_port_ = scm_open_bytevector_input_port (str, SCM_UNDEFINED);
   scm_dynwind_end ();
 #else

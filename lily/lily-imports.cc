@@ -33,6 +33,7 @@ namespace Guile_user {
   Variable module_use_x ("module-use!");
   Variable symbol_p ("symbol?");
   Variable the_root_module ("the-root-module");
+  Variable default_port_encoding ("%default-port-encoding");
 }
 
 namespace Display {
