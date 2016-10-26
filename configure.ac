@@ -267,7 +267,12 @@ STEPMAKE_FREETYPE2(freetype2, REQUIRED, 2.1.10)
 STEPMAKE_WINDOWS
 
 # guile executable for some scripts
-STEPMAKE_GUILE(OPTIONAL, 1.8.2, 1.9.0)
+if test "$GUILEv2" = "yes"
+then
+    STEPMAKE_GUILE(OPTIONAL, 2.0.7, 2.2.0)
+else
+    STEPMAKE_GUILE(OPTIONAL, 1.8.2, 1.9.0)
+fi
 
 # perl for help2man and for mf2pt1.pl
 STEPMAKE_PERL(REQUIRED)
