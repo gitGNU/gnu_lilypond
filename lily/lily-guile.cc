@@ -441,7 +441,8 @@ type_check_assignment (SCM sym, SCM val, SCM type_symbol)
 
       warning (_f ("type check for `%s' failed; value `%s' must be of type `%s'",
                    ly_symbol2string (sym).c_str (),
-                   print_scm_val (val),
+                   //print_scm_val (val),
+                   "PLACEHOLDER",
                    ly_scm2string (type_name).c_str ()));
       progress_indication ("\n");
       return false;
