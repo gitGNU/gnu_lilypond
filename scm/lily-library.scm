@@ -779,8 +779,8 @@ as rectangular coordinates @code{(x-length . y-length)}."
 (define-public (remove-whitespace strg)
 "Remove characters satisfying @code{char-whitespace?} from string @var{strg}"
   (string-delete
-    strg
-    char-whitespace?))
+    char-whitespace?
+    strg))
 
 (define-public (string-encode-integer i)
   (cond

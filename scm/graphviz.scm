@@ -69,7 +69,7 @@
               es)
     (for-each (lambda (c)
                 (format out "subgraph cluster_~a {\nlabel= \"~a\"\ncolor=blue\n"
-                        (string-filter (car c) char-alphabetic?)
+                        (string-filter char-alphabetic? (car c))
                         (car c))
                 (for-each (lambda (n) (format out "~a\n" n)) (cdr c))
                 (display "}\n" out))

@@ -963,7 +963,7 @@ PIDs or the number of the process."
             (remove string-null?
                     (append-map
                      (lambda (f)
-                       (string-split (string-delete (ly:gulp-file f) #\cr) #\nl))
+                       (string-split (string-delete #\cr (ly:gulp-file f)) #\nl))
                      files))))
   (if (and (number? (ly:get-option 'job-count))
            (>= (length files) (ly:get-option 'job-count)))
