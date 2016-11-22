@@ -53,9 +53,9 @@ $(outdir)/%.html: $(outdir)/%.texi $(XREF_MAPS_DIR)/%.xref-map $(outdir)/version
 $(outdir)/%/index.html: $(outdir)/%.texi $(XREF_MAPS_DIR)/%.xref-map $(outdir)/version.itexi $(outdir)/weblinks.itexi $(outdir)/%.html.omf | $(OUT_TEXINFO_MANUALS)
 	mkdir -p $(dir $@)
 ifeq ($(WEB_VERSION),yes)
-	$(buildscript-dir)/run-and-check "DEPTH=$(depth)/../ AJAX_SEARCH=$(AJAX_SEARCH) $(TEXI2HTML) $(TEXI2HTML_SPLIT) $(TEXI2HTML_FLAGS) -D web_version --output=$(dir $@) $<"  "$*.splittexi.log"
+	$(buildscript-dir)/run-and-check "LANG= DEPTH=$(depth)/../ AJAX_SEARCH=$(AJAX_SEARCH) $(TEXI2HTML) $(TEXI2HTML_SPLIT) $(TEXI2HTML_FLAGS) -D web_version --output=$(dir $@) $<"  "$*.splittexi.log"
 else
-	$(buildscript-dir)/run-and-check "DEPTH=$(depth)/../ AJAX_SEARCH=$(AJAX_SEARCH) $(TEXI2HTML) $(TEXI2HTML_SPLIT) $(TEXI2HTML_FLAGS) --output=$(dir $@) $<"  "$*.splittexi.log"
+	$(buildscript-dir)/run-and-check "LANG= DEPTH=$(depth)/../ AJAX_SEARCH=$(AJAX_SEARCH) $(TEXI2HTML) $(TEXI2HTML_SPLIT) $(TEXI2HTML_FLAGS) --output=$(dir $@) $<"  "$*.splittexi.log"
 endif
 
 ifneq ($(ISOLANG),)
